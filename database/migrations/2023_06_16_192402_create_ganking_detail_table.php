@@ -15,7 +15,14 @@ class CreateGankingDetailTable extends Migration
     {
         Schema::create('ganking_detail', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('ganking_id');
             $table->string('users_id');
+            $table->string('loot')->nullable();
+            $table->double('presentase')->nullable();
+            $table->double('regear')->nullable();
+            $table->time('time_start', $precision = 0)->nullable();
+            $table->time('time_end', $precision = 0)->nullable();
+            $table->integer('play_time')->nullable();
             $table->timestamps();
         });
     }

@@ -15,11 +15,13 @@ class CreateGankingTable extends Migration
     {
         Schema::create('ganking', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('name');
-            $table->date('date');
-            $table->string('description');
-            $table->string('created_by');
-            $table->string('updated_by');
+            $table->string('name')->nullable();
+            $table->date('date')->nullable();
+            $table->double('loot')->nullable();
+            $table->integer('qty')->nullable();
+            $table->string('description')->nullable();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }
