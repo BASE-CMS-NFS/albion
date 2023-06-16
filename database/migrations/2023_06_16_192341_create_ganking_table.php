@@ -20,6 +20,7 @@ class CreateGankingTable extends Migration
             $table->double('loot')->nullable();
             $table->integer('qty')->nullable();
             $table->string('description')->nullable();
+            $table->string('status')->nullable();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();
