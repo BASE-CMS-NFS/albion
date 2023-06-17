@@ -12,6 +12,13 @@
 
         <li class="nav-item nav-category">Menu</li>
 
+        <li class="nav-item @if($link=='ganking') active @endif">
+          <a class="nav-link" href="{{url('ganking')}}">
+            <i class="menu-icon mdi  mdi-skype"></i>
+            <span class="menu-title">ganking</span>
+          </a>
+        </li>
+
         {{-- SETTINGAN DARI CMS MENUS --}}
         @foreach (Nfs::menu(Session::get('id')) as $menu_access)
 
@@ -50,8 +57,8 @@
         @endforeach
 
         {{-- account setting --}}
-{{-- 
-        <li class="nav-item @if($link=='account' or $link=='password') open active @endif">
+
+        {{-- <li class="nav-item @if($link=='account' or $link=='password') open active @endif">
           <a href="javascript:void(0);" class="nav-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-user"></i>
             <div data-i18n="Account Settings">Account Settings</div>

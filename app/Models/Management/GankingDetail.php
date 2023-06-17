@@ -5,6 +5,8 @@ namespace App\Models\Management;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Helper;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Session;
 class GankingDetail extends Model
 {
     use HasFactory;

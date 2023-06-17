@@ -21,6 +21,10 @@ use App\Http\Controllers\Cms\CmsDocumentController;
 use App\Http\Controllers\Cms\CmsManagementUsersController;
 
 // MANAGEMENT CLASS
+// MANAGEMENT CLASS
+use App\Http\Controllers\Management\GankingController;
+use App\Http\Controllers\Management\GankingDetailController;
+use App\Http\Controllers\Management\GankingPictController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +59,31 @@ Route::middleware(['web'])->group(function () {
 
         Route::get('test',[TetsController::class, 'index']);
 
-        Route::post('logout',[AuthController::class, 'logout']);   
+        Route::post('logout',[AuthController::class, 'logout']); 
+        
+        Route::get('ganking',[GankingController::class, 'index']);
+        Route::get('ganking/create',[GankingController::class, 'create']);
+        Route::get('ganking/show/{id}',[GankingController::class, 'show']);
+        Route::get('ganking/edit/{id}',[GankingController::class, 'edit']);
+        Route::get('ganking/destroy/{id}',[GankingController::class, 'destroy']);
+        Route::post('ganking/store',[GankingController::class, 'store']);
+        Route::post('ganking/update',[GankingController::class, 'update']);
+
+        Route::get('ganking_detail',[GankingDetailController::class, 'index']);
+        Route::get('ganking_detail/create',[GankingDetailController::class, 'create']);
+        Route::get('ganking_detail/show/{id}',[GankingDetailController::class, 'show']);
+        Route::get('ganking_detail/edit/{id}',[GankingDetailController::class, 'edit']);
+        Route::get('ganking_detail/destroy/{id}',[GankingDetailController::class, 'destroy']);
+        Route::post('ganking_detail/store',[GankingDetailController::class, 'store']);
+        Route::post('ganking_detail/update',[GankingDetailController::class, 'update']);
+
+        Route::get('ganking_pict',[GankingPictController::class, 'index']);
+        Route::get('ganking_pict/create',[GankingPictController::class, 'create']);
+        Route::get('ganking_pict/show/{id}',[GankingPictController::class, 'show']);
+        Route::get('ganking_pict/edit/{id}',[GankingPictController::class, 'edit']);
+        Route::get('ganking_pict/destroy/{id}',[GankingPictController::class, 'destroy']);
+        Route::post('ganking_pict/store',[GankingPictController::class, 'store']);
+        Route::post('ganking_pict/update',[GankingPictController::class, 'update']);
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
 

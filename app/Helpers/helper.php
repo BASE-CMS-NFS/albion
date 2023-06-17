@@ -68,5 +68,12 @@ class Helper {
 
     }
 
+    public static function nameUser($id){
+
+        $data = DB::table('users')->where('id',$id)->first();
+
+        return $data->name;
+    }
+
 
 }

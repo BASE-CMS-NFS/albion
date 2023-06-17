@@ -4,6 +4,30 @@ namespace App\Http\Controllers\Management;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+#PACKAGE
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
+use Ixudra\Curl\Facades\Curl;
+use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
+use Validator;
+use Hash;
+use Storage;
+#HELPER
+use Cron;
+use Date;
+use Fibonanci;
+use Helper;
+use Nfs;
+use Payments;
+use Wa;
+#MICROSERVICES
+use App\Models\Management\Ganking;
+use App\Models\Management\GankingDetail;
+use App\Models\Management\GankingPict;
 
 class GankingPictController extends Controller
 {
