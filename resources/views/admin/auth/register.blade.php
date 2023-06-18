@@ -1,110 +1,118 @@
-@extends('admin.auth.tema.content')
-@section('content')
-    <div class="container-xxl">
-        <div class="authentication-wrapper authentication-basic container-p-y">
-          <div class="authentication-inner">
-            <!-- Register Card -->
-            <div class="card">
-              <div class="card-body">
-                <!-- Logo -->
-                <div class="app-brand justify-content-center">
-                  <a href="{{url('/')}}" class="app-brand-link gap-2">
-                    <span class="app-brand-logo demo">
-                     <img src="{{Nfs::content('logo')}}" alt="" width="60px">
-                    </span>
-                    <span class="app-brand-text demo text-body fw-bolder">{{Nfs::content('app')}}</span>
-                  </a>
-                </div>
 
-                 {{-- error --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{Nfs::content('app')}}</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{url('assets/vendors/feather/feather.css')}}">
+  <link rel="stylesheet" href="{{url('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+  <link rel="stylesheet" href="{{url('assets/vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{url('assets/vendors/typicons/typicons.css')}}">
+  <link rel="stylesheet" href="{{url('assets/vendors/simple-line-icons/css/simple-line-icons.css')}}">
+  <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.base.css')}}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{url('assets/css/vertical-layout-light/style.css')}}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}" />
+
+</head>
+
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <h4>Login</h4>
+              <h6 class="fw-light">start to manage admin</h6>
+
+              {{-- error --}}
 
               @if ($errors->any())
               <div class="alert alert-danger">
                   <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
                       </ul>
                   </div>
               @endif
 
               @if(session()->has('error'))
 
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>{{session('error')}}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+                </div>
 
               @endif
 
               @if(session()->has('success'))
 
-              <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
                 <strong>{{session('success')}}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+                </div>
 
               @endif
 
-          {{-- error --}}
-
-                <!-- /Logo -->
-                <h4 class="mb-2">Adventure starts here 🚀</h4>
-                <p class="mb-4">Make your app management easy and fun!</p>
-  
-                <form id="formAuthentication" class="mb-3" action="{{url('sign-up')}}" method="POST">
-                  @csrf
-                  <div class="mb-3">
-                    <label for="username" class="form-label">Name</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      name="name"
-                      placeholder="Enter your name"
-                      autofocus
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"/>
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="phone" class="form-label">Phone Number</label>
-                    <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your phone"/>
-                  </div>
-
-                  <div class="mb-3 form-password-toggle">
-                    <label class="form-label" for="password">Password</label>
-                    <div class="input-group input-group-merge">
-                      <input
-                        type="password"
-                        id="password"
-                        class="form-control"
-                        name="password"
-                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                        aria-describedby="password"
-                      />
-                      <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                    </div>
-                  </div>
-
-                  <button type="submit" id="submit" class="btn btn-primary d-grid w-100">Buat Akun</button>
-                </form>
-  
-                <p class="text-center">
-                  <span>Sudah mempunyai account?</span>
-                  <a href="{{url('login')}}">
-                    <span>Login disini</span>
-                  </a>
-                </p>
-              </div>
+              <form class="pt-3" method="post" action="{{url('sign-up')}}">
+                @csrf
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="name ingame albion">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control form-control-lg" id="phone" name="phone" placeholder="phone">
+                </div>
+                <div class="mt-3">
+                  <input class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" value="SIGN IN" />
+                </div>
+                
+              </form>
+              <p class="text-center">
+                <span>Sudah mempunyai account?</span>
+                <a href="{{url('login')}}">
+                  <span>Login disini</span>
+                </a>
+              </p>
             </div>
-            <!-- Register Card -->
           </div>
         </div>
       </div>
-  
-      <!-- / Content -->
-@endsection
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="{{url('assets/vendors/js/vendor.bundle.base.js')}}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{{url('assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{{url('assets/js/off-canvas.js')}}"></script>
+  <script src="{{url('assets/js/hoverable-collapse.js')}}"></script>
+  <script src="{{url('assets/js/template.js')}}"></script>
+  <script src="{{url('assets/js/settings.js')}}"></script>
+  <script src="{{url('assets/js/todolist.js')}}"></script>
+  <!-- endinject -->
+</body>
+
+</html>

@@ -76,6 +76,12 @@
                 </div>
                 
               </form>
+              <p class="text-center">
+                <span>belum mempunyai account?</span>
+                <a href="{{url('register')}}">
+                  <span>register disini</span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
