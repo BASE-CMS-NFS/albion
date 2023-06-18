@@ -38,7 +38,7 @@ class GankingDetailController extends Controller
      */
     public static function init(){
 
-        $data['title'] = 'ganking_detail';
+        $data['title'] = 'ganking member';
         $data['link']  = 'ganking_detail';
 
         return $data;
@@ -46,9 +46,10 @@ class GankingDetailController extends Controller
 
     public function index($id)
     {
-        $data        = Self::init();
-        $data['row'] = GankingDetail::listData($id);
+        $data               = Self::init();
+        $data['row']        = GankingDetail::listData($id);
         $data['ganking_id'] = $id;
+        $data['ganking']    = Ganking::where('id',$id)->first();
 
         return view('admin.management.ganking_detail.index',$data);
     }

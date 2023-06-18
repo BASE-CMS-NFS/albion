@@ -12,7 +12,7 @@
 
         <li class="nav-item nav-category">Menu</li>
 
-        <li class="nav-item @if($link=='ganking') active @endif">
+        <li class="nav-item @if($link=='ganking' || $link =='ganking_detail') active @endif">
           <a class="nav-link" href="{{url('ganking')}}">
             <i class="menu-icon mdi  mdi-skype"></i>
             <span class="menu-title">ganking</span>

@@ -9,10 +9,38 @@
 <div class="mb-3">
   <nav class="navbar navbar-example navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid" style="justify-content: start">
-        <a class="btn btn-primary btn-sm" href="{{url('ganking_detail/create')}}"><i class='bx bx-plus'></i>&nbsp;tambah data</a>
+        <a class="btn btn-success btn-sm" href="{{url('ganking_detail/create')}}"><i class='bx bx-plus'></i>&nbsp;tambah data</a>
         </div>
     </nav>
   </div>
+
+  <div class="row">
+      <div class="col-sm-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            
+            <div class="btn btn-primary">
+                <p>
+                  QTY LOOT : {{$ganking->qty}}
+                </p>
+            </div>
+  
+            <div class="btn btn-primary">
+              <p>
+                  ESTIMASI SILVER : {{number_format($ganking->loot)}}
+              </p>
+          </div>
+
+          <div class="btn btn-primary">
+            <p>
+                TANGGAL GANKING : {{$ganking->date}}
+            </p>
+        </div>
+
+          </div>
+        </div>
+      </div>
+  </div>  
 
 
 <div class="row" style="margin-bottom: 30px">
