@@ -41,7 +41,7 @@ class Ganking extends Model
     }
 
     public static function listData(){
-        $data = Ganking::paginate(10);
+        $data = Ganking::orderBy('created_at','desc')->paginate(10);
 
         return $data;
     }

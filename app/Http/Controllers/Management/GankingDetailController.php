@@ -28,6 +28,7 @@ use Wa;
 use App\Models\Management\Ganking;
 use App\Models\Management\GankingDetail;
 use App\Models\Management\GankingPict;
+use App\Models\User;
 
 class GankingDetailController extends Controller
 {
@@ -50,6 +51,7 @@ class GankingDetailController extends Controller
         $data['row']        = GankingDetail::listData($id);
         $data['ganking_id'] = $id;
         $data['ganking']    = Ganking::where('id',$id)->first();
+        $data['users']      = User::get();
 
         return view('admin.management.ganking_detail.index',$data);
     }
@@ -79,14 +81,10 @@ class GankingDetailController extends Controller
         $request->validate([
             'ganking_id'        => 'required|string',
             'users_id'          => 'required',
-            'loot'              => 'required',
-            'presentase'        => 'required',
-            'regear'            => 'required',
             'time_start'        => 'required',
-            'time_end'          => 'required',
         ]);
 
-        $save = GankingDetail::insertData($send);
+        $save = GankingDetail::insertData($request);
 
         if($save){
             return redirect()->back()->with('message','success save data')->with('message_type','primary');
@@ -133,12 +131,7 @@ class GankingDetailController extends Controller
         $request->validate([
             'ganking_id'        => 'required|string',
             'users_id'          => 'required',
-            'loot'              => 'required',
-            'presentase'        => 'required',
-            'regear'            => 'required',
             'time_start'        => 'required',
-            'time_end'          => 'required',
-            'id'                => 'required',
         ]);
 
         $save = GankingDetail::updateData($request);

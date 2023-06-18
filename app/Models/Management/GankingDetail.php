@@ -42,7 +42,11 @@ class GankingDetail extends Model
     }
 
     public static function listData($id){
-        $data = GankingDetail::where('ganking_id',$id)->get();
+        $data = GankingDetail::join('users','users.id','=','ganking_detail.users_id')
+                ->where('ganking_detail.ganking_id',$id)
+                ->select('users.name as users','ganking_detail.*')
+                ->orderBy('created_at','desc')
+                ->get();
 
         return $data;
     }
@@ -87,7 +91,6 @@ class GankingDetail extends Model
             "time_start"        => $request->time_start,
             "time_end"          => $request->time_end,
             "play_time"         => $request->play_time,
-            "updated_by"        => Session::get('id'),
             "updated_at"        => date('Y-m-d H:i:s'),
         ]);
 
