@@ -77,11 +77,16 @@ class Date {
 
         $total_time = GankingDetail::where('ganking_id',$ganking_id)->sum('play_time');
 
-        $pres = (100 * $play_time) / $total_time;
+        if($total_time != 0){
 
-        $data['presentase'] = $pres;
+            $pres = (100 * $play_time) / $total_time;
 
-        $update = GankingDetail::where('id',$id)->update($data);
+            $data['presentase'] = $pres;
+
+            $update = GankingDetail::where('id',$id)->update($data);
+        }else{
+            $pres = 0;
+        }
 
         return number_format($pres,2);
     }
