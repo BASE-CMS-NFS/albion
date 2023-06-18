@@ -126,7 +126,7 @@
             <div class="row mt-20">
               <div class="col-sm-12">
                 <a href="{{url('ganking/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
-                @if(Session::get('id') == $key->created_by)
+                @if(Session::get('id') == $key->created_by or Sessio::get('cms_role_id') == 1)
                   <a href="{{url('ganking/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>
                   <a href="javascript:void(0)" onclick="hapus('{{url('ganking/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
                   <a href="{{url('ganking_detail/'.$key->id)}}" class="btn btn-sm btn-success">Tambahkan Member</a>
