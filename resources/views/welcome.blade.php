@@ -65,7 +65,7 @@
           <div class="row flex-center">
             <div class="col-lg-6 col-md-5 order-md-1"><img class="img-fluid" src="{{url('web/assets/img/illustrations/1.png')}}" alt="" /></div>
             <div class="col-md-7 col-lg-6 mt-5 text-center text-md-start">
-              <h1 class="fw-medium">Want anything to be<br />easy with <span class="fw-bold">{{Nfs::app()}}.</span></h1>
+              <h1 class="fw-medium">Share Ganking<br />easy with <span class="fw-bold">{{Nfs::app()}}.</span></h1>
               <p class="mt-3 mb-4">ALBION ONLINE GANKING SHARE SYSTEM </a>
             </div>
           </div>
@@ -159,25 +159,19 @@
                 <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2FAB73" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
                 </svg>
-                <p class="ms-2">Powerfull online protection.</p>
+                <p class="ms-2">Pembagian Ganking Dengan Mudah</p>
               </div>
               <div class="d-flex">
                 <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2FAB73" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
                 </svg>
-                <p class="ms-2">Internet without borders.</p>
+                <p class="ms-2">Management Share Loot.</p>
               </div>
               <div class="d-flex">
                 <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2FAB73" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
                 </svg>
-                <p class="ms-2">Supercharged VPN.</p>
-              </div>
-              <div class="d-flex">
-                <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2FAB73" viewBox="0 0 16 16">
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
-                </svg>
-                <p class="ms-2">Internet without borders.</p>
+                <p class="ms-2">Management Membber Ganking</p>
               </div>
             </div>
           </div>
@@ -250,7 +244,7 @@
               <p>This template is made with&nbsp;
                 <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F53838" viewBox="0 0 16 16">
                   <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
-                </svg>&nbsp;by&nbsp;<a class="text-900" href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                </svg>&nbsp;by&nbsp;<a class="text-900" href="https://kodeshop.id/" target="_blank">kodeshop.id</a>
               </p>
             </div>
           </div>
