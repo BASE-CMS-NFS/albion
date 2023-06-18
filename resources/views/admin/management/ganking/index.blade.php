@@ -71,49 +71,51 @@
         <div class="card-body">
           <h4 class="card-title">{{$title}}</h4>
           
+          <div class="btn btn-primary">
+              <p>
+                QTY LOOT : {{$key->qty}}
+              </p>
+          </div>
+
+          <div class="btn btn-primary">
+            <p>
+                ESTIMASI SILVER : {{number_format($key->loot)}}
+            </p>
+        </div>
+
           <div class="table-responsive">
             <table class="table table-borderless">
                 <tr>
                     <td>name</td>
-                    <td>:</td>
-                    <td>{{$key->name}}</td>
+                    <td>=</td>
+                    <td><b>{{$key->name}}</b></td>
                 </tr>
                 <tr>
                     <td>date</td>
-                    <td>:</td>
-                    <td>{{$key->date}}</td>
-                </tr>
-                <tr>
-                    <td>loot</td>
-                    <td>:</td>
-                    <td>{{$key->loot}}</td>
-                </tr>
-                <tr>
-                    <td>qty</td>
-                    <td>:</td>
-                    <td>{{$key->qty}}</td>
+                    <td>=</td>
+                    <td><b>{{$key->date}}</b></td>
                 </tr>
                 <tr>
                     <td>status</td>
-                    <td>:</td>
-                    <td>{{$key->status}}</td>
+                    <td>=</td>
+                    <td><b>{{$key->status}}</b></td>
                 </tr>
                 <tr>
                     <td>description</td>
-                    <td>:</td>
-                    <td>@php echo $key->description @endphp</td>
+                    <td>=</td>
+                    <td><b>@php echo $key->description @endphp</b></td>
                 </tr>
 
                 <tr>
-                    <td>created_by</td>
-                    <td>:</td>
-                    <td>{{Helper::nameUser($key->created_by)}}</td>
+                    <td>dibuat oleh</td>
+                    <td>=</td>
+                    <td><b>{{Helper::nameUser($key->created_by)}}</b></td>
                 </tr>
 
                 <tr>
-                    <td>updated_by</td>
-                    <td>:</td>
-                    <td>{{Helper::nameUser($key->updated_by)}}</td>
+                    <td>diupdate oleh</td>
+                    <td>=</td>
+                    <td><b>{{Helper::nameUser($key->updated_by)}}</b></td>
                 </tr>
             
             </table>
@@ -126,6 +128,7 @@
                 <a href="{{url('ganking/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
                 <a href="{{url('ganking/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>
                 <a href="javascript:void(0)" onclick="hapus('{{url('ganking/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
+                <a href="{{url('ganking_detail/'.$key->id)}}" class="btn btn-sm btn-success">Tambahkan Member</a>
               </div>
             </div>
 

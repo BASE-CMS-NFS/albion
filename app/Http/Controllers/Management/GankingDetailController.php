@@ -44,12 +44,13 @@ class GankingDetailController extends Controller
         return $data;
     }
 
-    public function index()
+    public function index($id)
     {
         $data        = Self::init();
-        $data['row'] = GankingDetail::listData();
+        $data['row'] = GankingDetail::listData($id);
+        $data['ganking_id'] = $id;
 
-        return view('admin.management.ganking.index',$data);
+        return view('admin.management.ganking_detail.index',$data);
     }
 
 
@@ -63,7 +64,7 @@ class GankingDetailController extends Controller
     public function create()
     {
         $data               = Self::init();
-        return view('admin.management.ganking.create',$data);
+        return view('admin.management.ganking_detail.create',$data);
     }
 
     /**
@@ -103,7 +104,7 @@ class GankingDetailController extends Controller
     {
         $data        = Self::init();
         $data['row'] = GankingDetail::detailData($id);
-        return view('admin.management.ganking.show',$data);
+        return view('admin.management.ganking_detail.show',$data);
     }
 
     /**
@@ -116,7 +117,7 @@ class GankingDetailController extends Controller
     {
         $data        = Self::init();
         $data['row'] = GankingDetail::detailData($id);
-        return view('admin.management.ganking.edit',$data);
+        return view('admin.management.ganking_detail.edit',$data);
     }
 
     /**

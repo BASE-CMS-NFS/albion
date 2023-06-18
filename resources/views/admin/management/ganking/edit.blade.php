@@ -30,12 +30,12 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
             </div>
 
             <div class="form-group">
-              <label for="loot">{{Helper::uc('loot')}}</label>
+              <label for="loot">{{Helper::uc('estimasi silver')}}</label>
               <input type="number" class="form-control" id="loot" name="loot" placeholder="loot" value="{{$row->loot}}" required>
             </div>
 
             <div class="form-group">
-              <label for="qty">{{Helper::uc('qty')}}</label>
+              <label for="qty">{{Helper::uc('total loot qty')}}</label>
               <input type="number" class="form-control" id="qty" name="qty" placeholder="qty" value="{{$row->qty}}" required>
             </div>
 
@@ -77,7 +77,7 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
     <script>
     tinymce.init({
       selector: 'textarea#basic-example',
-      height: 500,
+      height: 200,
       plugins: [
         'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
         'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',

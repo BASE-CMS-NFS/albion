@@ -41,8 +41,8 @@ class GankingDetail extends Model
         return 'string';
     }
 
-    public static function listData(){
-        $data = GankingDetail::paginate(10);
+    public static function listData($id){
+        $data = GankingDetail::where('ganking_id',$id)->get();
 
         return $data;
     }

@@ -35,29 +35,7 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($row as $key)
-              <tr>
-                <td>{{$key->name}}</td>
-                <td>
-                  @if($key->file)
-                  <a data-fslightbox="gallery" href="{{url('storage/'.$key->file)}}">
-                      <img src="{{url('storage/'.$key->file)}}" class="img-table" alt="{{$key->name}}">
-                  </a>
-                  @else
-                      <p>no file</p>
-                  @endif
-              </td>
-                <td>{{$key->link}}</td>
-                <td>{{$key->type}}</td>
-                <td>{{$key->master}}</td>
-                <td>{{$key->status}}</td>
-                <td>
-                  <a href="{{url('ganking_detail/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
-                  <a href="{{url('ganking_detail/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>
-                  <a href="javascript:void(0)" onclick="hapus('{{url('ganking_detail/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
-                </td>
-              </tr>
-              @endforeach
+        
             </tbody>
           </table>
         </div>

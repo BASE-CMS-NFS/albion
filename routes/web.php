@@ -69,7 +69,7 @@ Route::middleware(['web'])->group(function () {
         Route::post('ganking/store',[GankingController::class, 'store']);
         Route::post('ganking/update',[GankingController::class, 'update']);
 
-        Route::get('ganking_detail',[GankingDetailController::class, 'index']);
+        Route::get('ganking_detail/{id}',[GankingDetailController::class, 'index']);
         Route::get('ganking_detail/create',[GankingDetailController::class, 'create']);
         Route::get('ganking_detail/show/{id}',[GankingDetailController::class, 'show']);
         Route::get('ganking_detail/edit/{id}',[GankingDetailController::class, 'edit']);
