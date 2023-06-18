@@ -75,7 +75,7 @@ class User extends Authenticatable
             "password"      =>Hash::make($request->password),
             "created_at"    =>date('Y-m-d H:i:s'),
             "cms_role_id"   =>3,
-            "status"        =>'notactive'
+            "status"        =>'active'
         ]);
 
         return $save;

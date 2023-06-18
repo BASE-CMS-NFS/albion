@@ -101,6 +101,7 @@ class GankingController extends Controller
     {
         $data        = Self::init();
         $data['row'] = Ganking::detailData($id);
+        $data['gank']= GankingDetail::listData($id);
         return view('admin.management.ganking.show',$data);
     }
 

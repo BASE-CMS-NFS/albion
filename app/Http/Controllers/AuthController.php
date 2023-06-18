@@ -51,10 +51,10 @@ class AuthController extends Controller
 
         if($check_user){
             Nfs::insertLogs('Register via web');
-            CmsVerifikasi::insertData($request->email);
-            Mail::to($request->email)->send(new EmailVerifikasi($request->email,Helper::urlVerifikasi($request->email)));
+            // CmsVerifikasi::insertData($request->email);
+            // Mail::to($request->email)->send(new EmailVerifikasi($request->email,Helper::urlVerifikasi($request->email)));
 
-            return redirect('/verifikasi')->with('success','You have successfully registered, please login');
+            return redirect('/login')->with('success','You have successfully registered, please login');
         }else{
             return back()->with('error','somethings else please try again');
         }
