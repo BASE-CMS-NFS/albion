@@ -43,13 +43,13 @@
                     <tr>
                         <td>created_by</td>
                         <td>:</td>
-                        <td>{{Helper::nameUser($key->created_by)}}</td>
+                        <td>{{Helper::nameUser($row->created_by)}}</td>
                     </tr>
 
                     <tr>
                         <td>updated_by</td>
                         <td>:</td>
-                        <td>{{Helper::nameUser($key->updated_by)}}</td>
+                        <td>{{Helper::nameUser($row->updated_by)}}</td>
                     </tr>
                  
                 </table>
