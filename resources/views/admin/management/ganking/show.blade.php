@@ -37,7 +37,7 @@
                     <tr>
                         <td>description</td>
                         <td>:</td>
-                        <td>{{$row->description}}</td>
+                        <td>@php echo $row->description @endphp</td>
                     </tr>
 
                     <tr>
