@@ -9,6 +9,10 @@ use Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Nfs;
+use App\Models\Management\Ganking;
+use App\Models\Management\GankingDetail;
+use App\Models\Management\GankingPict;
+use App\Models\User;
  
 class Helper {
 
@@ -75,5 +79,27 @@ class Helper {
         return $data->name;
     }
 
+
+    public static function countMember(){
+        $data = DB::table('users')->count();
+
+        return $data;
+    }
+
+    public static function totalLoot(){
+
+        $data = Ganking::sum('loot');
+
+        return $data;
+
+    }
+
+    public static function totalContent(){
+
+        $data = Ganking::count();
+
+        return $data;
+
+    }
 
 }

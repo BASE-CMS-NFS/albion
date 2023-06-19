@@ -65,7 +65,7 @@
           <div class="row flex-center">
             <div class="col-lg-6 col-md-5 order-md-1"><img class="img-fluid" src="{{url('web/assets/img/illustrations/1.png')}}" alt="" /></div>
             <div class="col-md-7 col-lg-6 mt-5 text-center text-md-start">
-              <h1 class="fw-medium">Share Ganking<br />easy with <span class="fw-bold">{{Nfs::app()}}.</span></h1>
+              <h1 class="fw-medium">Share Ganking<br />easy with <span class="fw-bold">TATATAKAE</span></h1>
               <p class="mt-3 mb-4">ALBION ONLINE GANKING SHARE SYSTEM </a>
             </div>
           </div>
@@ -97,8 +97,8 @@
                       </div>
                     </div>
                     <div>
-                      <p class="fw-bolder text-1000 mb-0">90+ </p>
-                      <p class="mb-0">Users </p>
+                      <p class="fw-bolder text-1000 mb-0">{{Helper::countMember()}} </p>
+                      <p class="mb-0">Member</p>
                     </div>
                   </div>
                 </div>
@@ -112,8 +112,8 @@
                       </div>
                     </div>
                     <div>
-                      <p class="fw-bolder text-1000 mb-0">30+ </p>
-                      <p class="mb-0">Users </p>
+                      <p class="fw-bolder text-1000 mb-0">{{number_format(Helper::totalLoot())}}</p>
+                      <p class="mb-0">Total Silver </p>
                     </div>
                   </div>
                 </div>
@@ -127,8 +127,8 @@
                       </div>
                     </div>
                     <div>
-                      <p class="fw-bolder text-1000 mb-0">50+ </p>
-                      <p class="mb-0">Users </p>
+                      <p class="fw-bolder text-1000 mb-0">{{Helper::totalContent()}}</p>
+                      <p class="mb-0">Total Content</p>
                     </div>
                   </div>
                 </div>
