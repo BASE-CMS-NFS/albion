@@ -25,6 +25,10 @@ use Wa;
 #MODEL
 use App\Models\User;
 use App\Models\Cms\Role;
+use App\Models\Management\Ganking;
+use App\Models\Management\GankingDetail;
+use App\Models\Management\GankingPict;
+
 
 class DashboardController extends Controller
 {
@@ -36,6 +40,7 @@ class DashboardController extends Controller
     
     public function index(){
         $data = Self::init();
+        $data['row'] = Ganking::listDataActive();
         return view('admin.dashboard.dashboard',$data);
     }
 }
