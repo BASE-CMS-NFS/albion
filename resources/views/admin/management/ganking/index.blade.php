@@ -21,13 +21,13 @@
         <div class="card-body">
           <h4 class="card-title">{{$title}}</h4>
           
-          <div class="btn btn-primary">
+          <div class="btn btn-primary mb-3">
               <p>
                 QTY LOOT : {{$key->qty}}
               </p>
           </div>
 
-          <div class="btn btn-primary">
+          <div class="btn btn-primary mb-3">
             <p>
                 ESTIMASI SILVER : {{number_format($key->loot)}}
             </p>

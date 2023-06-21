@@ -192,7 +192,8 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-4 mb-3"><a href="#"><img class="d-inline-block align-middle" src="{{url('web/assets/img/icons/logo.png')}}" alt="" width="30" /><span class="d-inline-block text-1000 fs-1 ms-2 fw-medium lh-base">Lasles<span class="fw-bold">VPN</span></span></a>
+            <div class="col-12 col-lg-4 mb-3"><a href="#"><img class="d-inline-block align-middle" src="{{url('assets/images/logo.jpg')}}" alt="" width="30" />
+              <span class="d-inline-block text-1000 fs-1 ms-2 fw-medium lh-base">Albion<span class="fw-bold">Online</span></span></a>
               <p class="my-3"> <span class="fw-medium">TATAKAE ALBION </span>ALBION MANAGEMENT SYSTEM<br />has unique features and has high security. </p>
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item"><a class="text-decoration-none" href="#!">

@@ -41,13 +41,13 @@
                     </tr>
 
                     <tr>
-                        <td>created_by</td>
+                        <td>created by</td>
                         <td>:</td>
                         <td>{{Helper::nameUser($row->created_by)}}</td>
                     </tr>
 
                     <tr>
-                        <td>updated_by</td>
+                        <td>updated by</td>
                         <td>:</td>
                         <td>{{Helper::nameUser($row->updated_by)}}</td>
                     </tr>
