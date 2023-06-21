@@ -62,6 +62,7 @@ Route::middleware(['web'])->group(function () {
         Route::post('logout',[AuthController::class, 'logout']); 
         
         Route::get('ganking',[GankingController::class, 'index']);
+        Route::get('me',[GankingController::class, 'ganking']);
         Route::get('ganking/create',[GankingController::class, 'create']);
         Route::get('ganking/show/{id}',[GankingController::class, 'show']);
         Route::get('ganking/edit/{id}',[GankingController::class, 'edit']);

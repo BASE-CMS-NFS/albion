@@ -35,7 +35,7 @@
   </div>
   
 
-  <div class="row">
+  {{-- <div class="row">
     @foreach($row as $key)
       <div class="col-sm-12 grid-margin stretch-card">
         <div class="card">
@@ -115,7 +115,7 @@
     <div class="col-sm-12">
       {{ $row->links('vendor.pagination.simple-bootstrap-4') }}
     </div>
-  </div>
+  </div> --}}
 
 
 </div>

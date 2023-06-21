@@ -45,6 +45,22 @@ class GankingController extends Controller
         return $data;
     }
 
+    public static function init_me(){
+
+        $data['title'] = 'ganking';
+        $data['link']  = 'me';
+
+        return $data;
+    }
+
+    public function ganking()
+    {
+        $data        = Self::init_me();
+        $data['row'] = Ganking::listDataByMe();
+
+        return view('admin.management.ganking.ganking',$data);
+    }
+
     public function index()
     {
         $data        = Self::init();

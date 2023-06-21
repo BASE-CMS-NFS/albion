@@ -46,6 +46,12 @@ class Ganking extends Model
         return $data;
     }
 
+    public static function listDataByMe(){
+        $data = Ganking::where('created_by',Session::get('id'))->orderBy('created_at','desc')->paginate(10);
+
+        return $data;
+    }
+
     public static function listDataActive(){
         $data = Ganking::where('status','masih ganking')->orderBy('created_at','desc')->paginate(10);
 
