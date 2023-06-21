@@ -89,6 +89,7 @@
                     </td>
                   </tr>
 
+
                   <div class="modal fade" id="edit{{$key->id}}" tabindex="-1" aria-labelledby="edit" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -106,11 +107,11 @@
 
                               <div class="form-group">
                                 <label for="member">member</label>
-                                <select class="form-control" name="users_id" id="users_id" required>
+                                <select id="user{{$key->id}}" class="form-control"  style="width: 100%" name="users_id" aria-label="Default select example">
                                     <option selected value="{{$key->users_id}}">{{$key->users}}</option>
-                                  @foreach($users as $user)
-                                    <option value="{{$user->id}}">{{$user->name}}</option>
-                                  @endforeach
+                                    @foreach($users as $user)
+                                      <option value="{{$user->id}}">{{$user->name}}</option>
+                                    @endforeach
                                 </select>
                               </div>
               
@@ -174,10 +175,11 @@
 
                 <div class="form-group">
                   <label for="member">member</label>
-                  <select class="form-control" name="users_id" id="users_id" required>
-                    @foreach($users as $user)
-                      <option value="{{$user->id}}">{{$user->name}}</option>
-                    @endforeach
+                  <select class="js-example-basic-single" style="width: 100%;z-index :999" name="users_id" aria-label="Default select example">
+                      <option value="" selected></option>
+                      @foreach($users as $user)
+                        <option value="{{$user->id}}">{{$user->name}}</option>
+                      @endforeach
                   </select>
                 </div>
 
@@ -229,6 +231,15 @@
       });
   });
   </script>
+
+<script>
+  $(document).ready(function() {
+      $('.js-example-basic-single').select2({
+          dropdownParent: $('#create')
+      });
+  });
+</script>
+
 @endpush
 
 @endsection
