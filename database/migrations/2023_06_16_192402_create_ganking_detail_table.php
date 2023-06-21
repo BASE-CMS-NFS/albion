@@ -20,8 +20,8 @@ class CreateGankingDetailTable extends Migration
             $table->string('loot')->nullable();
             $table->double('presentase')->nullable();
             $table->double('regear')->nullable();
-            $table->time('time_start', $precision = 0)->nullable();
-            $table->time('time_end', $precision = 0)->nullable();
+            $table->datetime('time_start', $precision = 0)->nullable();
+            $table->datetime('time_end', $precision = 0)->nullable();
             $table->integer('play_time')->nullable();
             $table->timestamps();
         });

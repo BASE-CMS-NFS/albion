@@ -116,12 +116,12 @@
               
                               <div class="mb-3">
                                 <label for="time_start" class="form-label">time start</label>
-                                <input type="time" class="form-control" id="time_start" name="time_start" value="{{$key->time_start}}" placeholder="time_start">
+                                <input type="datetime-local" class="form-control" id="time_start" name="time_start" value="{{$key->time_start}}" placeholder="time_start">
                               </div>
               
                               <div class="mb-3">
                                 <label for="time_end" class="form-label">time end</label>
-                                <input type="time" class="form-control" id="time_end" name="time_end" value="{{$key->time_end}}" placeholder="time_end">
+                                <input type="datetime-local" class="form-control" id="time_end" name="time_end" value="{{$key->time_end}}" placeholder="time_end">
                               </div>
               
                               <div class="mb-3">
@@ -183,12 +183,12 @@
 
                 <div class="mb-3">
                   <label for="time_start" class="form-label">time start</label>
-                  <input type="time" class="form-control" id="time_start" name="time_start" placeholder="time_start">
+                  <input type="datetime-local" class="form-control" id="time_start" name="time_start" placeholder="time_start">
                 </div>
 
                 <div class="mb-3">
                   <label for="time_end" class="form-label">time end</label>
-                  <input type="time" class="form-control" id="time_end" name="time_end" placeholder="time_end">
+                  <input type="datetime-local" class="form-control" id="time_end" name="time_end" placeholder="time_end">
                 </div>
 
                 <div class="mb-3">
