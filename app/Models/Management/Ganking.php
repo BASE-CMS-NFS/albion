@@ -15,6 +15,7 @@ class Ganking extends Model
 
     protected $fillable = [
         'id',
+        'kode',
         'name',
         'date',
         'loot',
@@ -73,6 +74,7 @@ class Ganking extends Model
     public static function insertData($request){
         $data = Ganking::create([
             "id"                => (string) Str::uuid(),
+            "kode"              => 'GNK'.date('Ymd').Str::random(3),
             "name"              => $request->name,
             "date"              => $request->date,
             "loot"              => $request->loot,

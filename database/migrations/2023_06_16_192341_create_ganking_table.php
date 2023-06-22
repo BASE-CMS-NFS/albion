@@ -15,6 +15,7 @@ class CreateGankingTable extends Migration
     {
         Schema::create('ganking', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('kode')->nullable();
             $table->string('name')->nullable();
             $table->date('date')->nullable();
             $table->double('loot')->nullable();

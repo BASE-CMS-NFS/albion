@@ -194,7 +194,7 @@
           <div class="row">
             <div class="col-12 col-lg-4 mb-3"><a href="#"><img class="d-inline-block align-middle" src="{{url('assets/images/logo.jpg')}}" alt="" width="30" />
               <span class="d-inline-block text-1000 fs-1 ms-2 fw-medium lh-base">Albion<span class="fw-bold">Online</span></span></a>
-              <p class="my-3"> <span class="fw-medium">TATAKAE ALBION </span>ALBION MANAGEMENT SYSTEM<br />has unique features and has high security. </p>
+              <p class="my-3"> <span class="fw-medium">TATAKAE ALBION </span>ALBION MANAGEMENT SYSTEM<br />IGN mikassa. </p>
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item"><a class="text-decoration-none" href="#!">
                     <svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F53838" viewBox="0 0 16 16">
