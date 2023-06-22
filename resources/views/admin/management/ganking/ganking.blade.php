@@ -19,7 +19,7 @@
     <div class="col-sm-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">{{$title}}</h4>
+          <h4 class="card-title">{{$title}} #{{$key->kode}}</h4>
           
           <div class="btn btn-primary">
               <p>
