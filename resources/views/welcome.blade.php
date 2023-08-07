@@ -65,7 +65,7 @@
           <div class="row flex-center">
             <div class="col-lg-6 col-md-5 order-md-1"><img class="img-fluid" src="{{url('web/assets/img/illustrations/1.png')}}" alt="" /></div>
             <div class="col-md-7 col-lg-6 mt-5 text-center text-md-start">
-              <h1 class="fw-medium">Share Ganking<br /><span class="fw-bold">TATAKAE</span></h1>
+              <h1 class="fw-medium">Share Ganking<br /><span class="fw-bold">HARAKIRI GUILD</span></h1>
               <p class="mt-3 mb-4">ALBION ONLINE GANKING SHARE SYSTEM </a>
             </div>
           </div>
@@ -194,7 +194,7 @@
           <div class="row">
             <div class="col-12 col-lg-4 mb-3"><a href="#"><img class="d-inline-block align-middle" src="{{url('assets/images/logo.jpg')}}" alt="" width="30" />
               <span class="d-inline-block text-1000 fs-1 ms-2 fw-medium lh-base">Albion<span class="fw-bold">Online</span></span></a>
-              <p class="my-3"> <span class="fw-medium">TATAKAE ALBION </span>ALBION MANAGEMENT SYSTEM<br />IGN mikassa. </p>
+              <p class="my-3"> <span class="fw-medium">HARAKIRI ALBION </span>ALBION MANAGEMENT SYSTEM<br />IGN xmikasa </p>
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item"><a class="text-decoration-none" href="#!">
                     <svg class="bi bi-facebook" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F53838" viewBox="0 0 16 16">
