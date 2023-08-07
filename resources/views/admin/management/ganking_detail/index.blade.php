@@ -37,7 +37,13 @@
             <p>
                 TANGGAL GANKING : {{$ganking->date}}
             </p>
-        </div>
+          </div>
+
+          <div>
+            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#edit-show">
+                Edit Estimasi Silver
+            </button>
+          </div>
 
           </div>
         </div>
@@ -213,6 +219,48 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="edit-show" tabindex="-1" aria-labelledby="create" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Create</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form action="{{url('ganking/qty')}}" method="POST">
+          @csrf
+          <div class="modal-body">
+
+            <input type="hidden" name="id" value="{{$ganking_id}}">
+
+            <div class="form-group">
+              <label for="qty">{{Helper::uc('total loot qty')}}</label>
+              <input type="number" class="form-control" id="qty" name="qty" placeholder="qty" value="{{$ganking->qty}}" required>
+            </div>
+
+            <div class="form-group">
+              <label for="status">{{Helper::uc('status')}}</label>
+              <select class="form-control" name="status" id="status" required>
+                <option value="{{$ganking->status}}">{{$ganking->status}}</option>
+                <option>masih ganking</option>
+                <option>selesai ganking</option>
+              </select>
+            </div>
+                
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
 
 
 

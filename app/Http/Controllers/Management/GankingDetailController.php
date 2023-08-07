@@ -142,6 +142,7 @@ class GankingDetailController extends Controller
             return redirect()->back()->with('message','failed save data')->with('message_type','warning');
         }
     }
+    
 
     /**
      * Remove the specified resource from storage.

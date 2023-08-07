@@ -160,6 +160,26 @@ class GankingController extends Controller
         }
     }
 
+    public function qty(Request $request)
+    {
+        $request->validate([
+            'qty'              => 'required',
+            'status'           => 'required',
+            'id'               => 'required',
+        ]);
+
+        $save = Ganking::where('id',$request->id)->update([
+            "qty"   => $request->qty,
+            "status"=> $request->status
+        ]);
+
+        if($save){
+            return redirect()->back()->with('message','success save data')->with('message_type','primary');
+        }else{
+            return redirect()->back()->with('message','failed save data')->with('message_type','warning');
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *
