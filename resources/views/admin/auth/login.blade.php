@@ -82,6 +82,14 @@
                   <span>register disini</span>
                 </a>
               </p>
+
+              <p class="text-center">
+                <span>back to home</span>
+                <a href="{{url('/')}}">
+                  <span>home</span>
+                </a>
+              </p>
+
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@
                 <div class="form-group">
 
                   <label for="name">{{Helper::uc('name')}}</label>
-                  <input type="text" class="form-control" id="name" name="name" value="{{$row->name}}" placeholder="name" required>
+                  <input type="text" class="form-control" id="name" name="name" value="{{$row->name}}" placeholder="name" readonly required>
                 </div>
 
                 <div class="form-group">
