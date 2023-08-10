@@ -5,6 +5,33 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+#PACKAGE
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
+use Ixudra\Curl\Facades\Curl;
+use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
+use Validator;
+use Hash;
+use Storage;
+#HELPER
+use Cron;
+use Date;
+use Fibonanci;
+use Helper;
+use Nfs;
+use Payments;
+use Wa;
+#MICROSERVICES
+use App\Models\Management\Ganking;
+use App\Models\Management\GankingDetail;
+use App\Models\Management\GankingPict;
+use App\Models\User;
+
+
 class GuestController extends Controller
 {
     /**
@@ -34,7 +61,23 @@ class GuestController extends Controller
 
     public function welcome()
     {
-        return view('welcome');
+        $data['link'] = 'home';
+        return view('welcome',$data);
+    }
+
+    public function member(){
+
+        $data['users'] = User::addSelect(['loot' => GankingDetail::selectRaw('sum(loot) as total')
+        ->whereColumn('users_id', 'users.id')
+        ->groupBy('users_id')
+    ])
+        ->where('cms_role_id',3)
+        ->orderBy('loot', 'DESC')
+        ->get();
+
+        $data['link'] = 'member';
+
+        return view('member',$data);
     }
 
     /**

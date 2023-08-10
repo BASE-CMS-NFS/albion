@@ -102,4 +102,34 @@ class Helper {
 
     }
 
+
+
+    public static function userGanking($users_id){
+        $loot_all   = GankingDetail::where('users_id',$users_id)->sum('loot');
+        $time_all   = GankingDetail::where('users_id',$users_id)->sum('play_time');
+
+        ################################################################
+        $firstday   = date('d/m/Y', strtotime("sunday -1 week"));
+        $lastday    = date('d/m/Y', strtotime("sunday 0 week"));
+
+        $startDate  = Carbon::createFromFormat('d/m/Y', $firstday);
+        $endDate    = Carbon::createFromFormat('d/m/Y', $lastday);
+        ###############################################################
+
+        $loot_week  = GankingDetail::where('users_id',$users_id)->whereBetween('created_at', [$startDate, $endDate])->sum('loot');
+
+        $time_week  = GankingDetail::where('users_id',$users_id)->whereBetween('created_at', [$startDate, $endDate])->sum('play_time');
+
+        $data = [
+            "loot_all" => $loot_all,
+            "time_all" => $time_all,
+            "loot_week"=> $loot_week,
+            "time_week"=> $time_week,
+            "image"    => url('/web/profile/'.rand(1,14).'.jpg')
+        ];
+
+        return $data;
+
+    }
+
 }

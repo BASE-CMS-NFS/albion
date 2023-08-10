@@ -163,13 +163,13 @@ class GankingController extends Controller
     public function qty(Request $request)
     {
         $request->validate([
-            'qty'              => 'required',
+            'loot'             => 'required',
             'status'           => 'required',
             'id'               => 'required',
         ]);
 
         $save = Ganking::where('id',$request->id)->update([
-            "qty"   => $request->qty,
+            "loot"   => $request->loot,
             "status"=> $request->status
         ]);
 

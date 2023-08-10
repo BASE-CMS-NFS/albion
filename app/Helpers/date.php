@@ -52,6 +52,9 @@ class Date {
         }else{
             $data = 0;
         }
+        
+        $up['loot'] = $data;
+        $update = GankingDetail::where('id',$id)->update($up);
 
 
         return number_format($data,2);

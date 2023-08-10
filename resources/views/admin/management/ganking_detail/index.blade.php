@@ -7,13 +7,13 @@
 
 
 <div class="mb-3">
-  <nav class="navbar navbar-example navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid" style="justify-content: start">
           <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#create">
               Tambah Data
           </button>
-      </div>
-    </nav>
+
+          <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#edit-show">
+            Edit Estimasi Silver
+          </button>
   </div>
 
   <div class="row">
@@ -37,12 +37,6 @@
             <p>
                 TANGGAL GANKING : {{$ganking->date}}
             </p>
-          </div>
-
-          <div>
-            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#edit-show">
-                Edit Estimasi Silver
-            </button>
           </div>
 
           </div>
@@ -237,8 +231,8 @@
             <input type="hidden" name="id" value="{{$ganking_id}}">
 
             <div class="form-group">
-              <label for="qty">{{Helper::uc('total loot qty')}}</label>
-              <input type="number" class="form-control" id="qty" name="qty" placeholder="qty" value="{{$ganking->qty}}" required>
+              <label for="qty">{{Helper::uc('estimasi silver')}}</label>
+              <input type="number" class="form-control" id="loot" name="loot" placeholder="loot" value="{{$ganking->loot}}" required>
             </div>
 
             <div class="form-group">

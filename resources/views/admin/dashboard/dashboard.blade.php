@@ -18,7 +18,7 @@
                     <h3 class="rate-percentage">{{Helper::countMember()}}</h3>
                   </div>
                   <div class="d-none d-md-block">
-                    <p class="statistics-title">Total Silver</p>
+                    <p class="statistics-title">Total Silver Ganking</p>
                     <h3 class="rate-percentage">{{number_format(Helper::totalLoot())}}</h3>
                   </div>
                   <div>
@@ -35,88 +35,34 @@
   </div>
   
 
-  {{-- <div class="row">
-    @foreach($row as $key)
-      <div class="col-sm-12 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">{{$title}}</h4>
-            
-            <div class="btn btn-primary">
-                <p>
-                  QTY LOOT : {{$key->qty}}
-                </p>
-            </div>
+      <div class="container">
+        <div class="row align-items-center">
   
-            <div class="btn btn-primary">
-              <p>
-                  ESTIMASI SILVER : {{number_format($key->loot)}}
-              </p>
-          </div>
-  
-            <div class="table-responsive">
-              <table class="table table-borderless">
-                  <tr>
-                      <td>name</td>
-                      <td>=</td>
-                      <td><b>{{$key->name}}</b></td>
-                  </tr>
-                  <tr>
-                      <td>date</td>
-                      <td>=</td>
-                      <td><b>{{$key->date}}</b></td>
-                  </tr>
-                  <tr>
-                      <td>status</td>
-                      <td>=</td>
-                      <td><b>{{$key->status}}</b></td>
-                  </tr>
-                  <tr>
-                      <td>description</td>
-                      <td>=</td>
-                      <td><b>@php echo $key->description @endphp</b></td>
-                  </tr>
-  
-                  <tr>
-                      <td>dibuat oleh</td>
-                      <td>=</td>
-                      <td><b>{{Helper::nameUser($key->created_by)}}</b></td>
-                  </tr>
-  
-                  <tr>
-                      <td>diupdate oleh</td>
-                      <td>=</td>
-                      <td><b>{{Helper::nameUser($key->updated_by)}}</b></td>
-                  </tr>
-              
-              </table>
-  
-            </div>
-  
-              <hr>
-              <div class="row mt-20">
-                <div class="col-sm-12">
-                  <a href="{{url('ganking/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
-                  @if(Session::get('id') == $key->created_by or Session::get('cms_role_id') == 1)
-                    <a href="{{url('ganking/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>
-                    <a href="javascript:void(0)" onclick="hapus('{{url('ganking/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
-                    <a href="{{url('ganking_detail/'.$key->id)}}" class="btn btn-sm btn-success">Tambahkan Member</a>
-                  @endif
-                </div>
+              @foreach($users as $key)
+              <div class="col-sm-12 col-md-3 mb-3">
+                  @php
+                      $user = Helper::userGanking($key->id);
+                  @endphp
+                          <div class="card-deck">
+                              <div class="card">
+                                  <img class="card-img-top" src="{{$user['image']}}" alt="Card image cap">
+                                  <div class="card-body">
+                                      <h5 class="card-title">{{$key->name}}</h5>
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Silver All : {{number_format($user['loot_all'])}}</li>
+                                          <li class="list-group-item">Silver Week : {{number_format($user['loot_week'])}}</li>
+                                          <li class="list-group-item">Play All : {{$user['time_all']}}</li>
+                                          <li class="list-group-item">Play Week : {{$user['time_week']}}</li>
+                                        </ul>
+                                  </div>
+                              </div>
+                          </div>
               </div>
+              @endforeach
   
-          </div>
         </div>
-      </div>
-    @endforeach
-  </div>
-  
-  <div class="row">
-    <div class="col-sm-12">
-      {{ $row->links('vendor.pagination.simple-bootstrap-4') }}
-    </div>
-  </div> --}}
 
+  </div>
 
 </div>
 @endsection

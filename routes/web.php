@@ -192,6 +192,7 @@ Route::middleware(['web'])->group(function () {
     });
 
     Route::get('/',[GuestController::class, 'welcome'])->name('welcome');
+    Route::get('member',[GuestController::class, 'member'])->name('member');
 
 
 });

@@ -41,6 +41,15 @@ class DashboardController extends Controller
     public function index(){
         $data = Self::init();
         $data['row'] = Ganking::listDataActive();
+
+        $data['users'] = User::addSelect(['loot' => GankingDetail::selectRaw('sum(loot) as total')
+        ->whereColumn('users_id', 'users.id')
+        ->groupBy('users_id')
+         ])
+        ->where('cms_role_id',3)
+        ->orderBy('loot', 'DESC')
+        ->get();
+
         return view('admin.dashboard.dashboard',$data);
     }
 }
