@@ -10,7 +10,9 @@
             <div class="col-lg-6 col-md-5 order-md-1"><img class="img-fluid" src="{{url('web/assets/img/illustrations/1.png')}}" alt="" /></div>
             <div class="col-md-7 col-lg-6 mt-5 text-center text-md-start">
               <h1 class="fw-medium">Share Ganking<br /><span class="fw-bold">HARAKIRI GUILD</span></h1>
-              <p class="mt-3 mb-4">ALBION ONLINE GANKING SHARE SYSTEM </a>
+              <p class="mt-3 mb-4">ALBION ONLINE GANKING SHARE SYSTEM </p>
+              <br>
+                <a class="btn btn-lg btn-danger hover-top btn-glow" href="{{url('/member')}}">Member Harakiri</a>
             </div>
           </div>
         </div>
@@ -124,5 +126,46 @@
 
       </section>
       <!-- <section> close ============================-->
+
+        <section class="pt-4 pt-md-6">
+
+          <div class="container">
+            <div class="row align-items-center">
+
+              <div class="text-center">
+                <h2>Harakiri Guild</h2>
+                <p>the most members who get silver from ganking</p>
+              </div>
+      
+                  @foreach($users as $key)
+                  <div class="col-sm-12 col-md-3 mb-3">
+                      @php
+                          $user = Helper::userGanking($key->id);
+                      @endphp
+                              <div class="card-deck">
+                                  <div class="card">
+                                      <img class="card-img-top" src="{{$user['image']}}" alt="Card image cap">
+                                      <div class="card-body">
+                                          <h5 class="card-title">{{$key->name}}</h5>
+                                          <ul class="list-group list-group-flush">
+                                              <li class="list-group-item">Silver All : {{number_format($user['loot_all'])}}</li>
+                                              <li class="list-group-item">Silver Week : {{number_format($user['loot_week'])}}</li>
+                                              <li class="list-group-item">Play All : {{$user['time_all']}}</li>
+                                              <li class="list-group-item">Play Week : {{$user['time_week']}}</li>
+                                            </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                  </div>
+                  @endforeach
+
+                  <div class="text-center">
+                    <a class="btn btn-lg btn-danger hover-top btn-glow" href="{{url('/member')}}">Show All Member Harakiri</a>
+                  </div>
+      
+            </div>
+          </div>
+      
+      </section>
 
       @endsection
