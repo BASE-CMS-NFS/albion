@@ -47,7 +47,7 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
       <div class="overflow-auto">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">{{$title}}</h4>
+          <h4 class="card-title">{{$title}}  Tanggal = {{$start}} - {{$end}}</h4>
           <div class="table-responsive">
             <table class="table table-hover" id="tabel">
               <thead>

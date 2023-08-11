@@ -92,6 +92,9 @@ class GankingController extends Controller
             $data['link']  = 'analisis';
             $data['tabel'] = TRUE;
 
+            $data['start'] = $request->start;
+            $data['end']   = $request->end;
+
             $data['row'] = User::addSelect(['loot' => GankingDetail::selectRaw('sum(loot) as total')
                 ->whereBetween('created_at', [$request->start, $request->end])
                 ->whereColumn('users_id', 'users.id')
