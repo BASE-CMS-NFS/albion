@@ -26,6 +26,13 @@
           </a>
         </li>
 
+        <li class="nav-item @if($link=='kupon') active @endif">
+          <a class="nav-link" href="{{url('kupon')}}">
+            <i class="menu-icon mdi  mdi-skype"></i>
+            <span class="menu-title">gatcha spin</span>
+          </a>
+        </li>
+
         {{-- SETTINGAN DARI CMS MENUS --}}
         @foreach (Nfs::menu(Session::get('id')) as $menu_access)
 

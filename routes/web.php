@@ -25,7 +25,7 @@ use App\Http\Controllers\Cms\CmsManagementUsersController;
 use App\Http\Controllers\Management\GankingController;
 use App\Http\Controllers\Management\GankingDetailController;
 use App\Http\Controllers\Management\GankingPictController;
-
+use App\Http\Controllers\Management\KuponController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +60,8 @@ Route::middleware(['web'])->group(function () {
         Route::get('test',[TetsController::class, 'index']);
 
         Route::post('logout',[AuthController::class, 'logout']); 
+
+        Route::get('kupon',[KuponController::class, 'index']);
         
         Route::get('ganking',[GankingController::class, 'index']);
         Route::get('me',[GankingController::class, 'ganking']);
@@ -88,6 +90,15 @@ Route::middleware(['web'])->group(function () {
         Route::post('ganking_pict/update',[GankingPictController::class, 'update']);
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
+
+
+            Route::get('kupon/create',[KuponController::class, 'create']);
+            Route::get('kupon/show/{id}',[KuponController::class, 'show']);
+            Route::get('kupon/edit/{id}',[KuponController::class, 'edit']);
+            Route::get('kupon/destroy/{id}',[KuponController::class, 'destroy']);
+            Route::post('kupon/store',[KuponController::class, 'store']);
+            Route::post('kupon/update',[KuponController::class, 'update']);
+
 
             Route::get('role',[RoleController::class, 'index'])->name('role');
             Route::get('role/create',[RoleController::class, 'create'])->name('role-create');
