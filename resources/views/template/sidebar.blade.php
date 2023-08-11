@@ -14,22 +14,36 @@
 
         <li class="nav-item @if($link=='me' || $link =='ganking_detail') active @endif">
           <a class="nav-link" href="{{url('me')}}">
-            <i class="menu-icon mdi  mdi-skype"></i>
+            <i class="menu-icon mdi mdi-smoking"></i>
             <span class="menu-title">ganking</span>
           </a>
         </li>
 
         <li class="nav-item @if($link=='ganking' || $link =='ganking_detail') active @endif">
           <a class="nav-link" href="{{url('ganking')}}">
-            <i class="menu-icon mdi  mdi-skype"></i>
+            <i class="menu-icon mdi mdi-skull"></i>
             <span class="menu-title">ganking all</span>
           </a>
         </li>
 
         <li class="nav-item @if($link=='kupon') active @endif">
           <a class="nav-link" href="{{url('kupon')}}">
-            <i class="menu-icon mdi  mdi-skype"></i>
+            <i class="menu-icon mdi mdi-gamepad-variant"></i>
             <span class="menu-title">gatcha spin</span>
+          </a>
+        </li>
+
+        <li class="nav-item @if($link=='pemula') active @endif">
+          <a class="nav-link" href="{{url('pemula')}}">
+            <i class="menu-icon mdi mdi-ghost"></i>
+            <span class="menu-title">Tutorial Pemula</span>
+          </a>
+        </li>
+
+        <li class="nav-item @if($link=='analisis') active @endif">
+          <a class="nav-link" href="{{url('analisis')}}">
+            <i class="menu-icon mdi mdi-coffee"></i>
+            <span class="menu-title">Analisis / History</span>
           </a>
         </li>
 
@@ -97,6 +111,13 @@
         @auth
         
         <li class="nav-item nav-category">Menu Admin</li>
+
+        <li class="nav-item @if($link=='tutorial') active @endif">
+          <a class="nav-link" href="{{url('admin/tutorial')}}">
+            <i class="menu-icon mdi mdi-monitor"></i>
+            <span class="menu-title">Tutorial Newbe</span>
+          </a>
+        </li>
 
         <li class="nav-item @if($link=='cms_role') active @endif">
           <a class="nav-link" href="{{url('admin/role')}}">

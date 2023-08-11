@@ -26,6 +26,7 @@ use App\Http\Controllers\Management\GankingController;
 use App\Http\Controllers\Management\GankingDetailController;
 use App\Http\Controllers\Management\GankingPictController;
 use App\Http\Controllers\Management\KuponController;
+use App\Http\Controllers\Management\TutorialController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,7 +63,10 @@ Route::middleware(['web'])->group(function () {
         Route::post('logout',[AuthController::class, 'logout']); 
 
         Route::get('kupon',[KuponController::class, 'index']);
+        Route::get('pemula',[TutorialController::class, 'pemula']);
         
+        Route::get('analisis',[GankingController::class, 'analisis']);
+        Route::post('ganking/analisis',[GankingController::class, 'analisisStore']);
         Route::get('ganking',[GankingController::class, 'index']);
         Route::get('me',[GankingController::class, 'ganking']);
         Route::get('ganking/create',[GankingController::class, 'create']);
@@ -99,6 +103,13 @@ Route::middleware(['web'])->group(function () {
             Route::post('kupon/store',[KuponController::class, 'store']);
             Route::post('kupon/update',[KuponController::class, 'update']);
 
+            Route::get('tutorial',[TutorialController::class, 'index']);
+            Route::get('tutorial/create',[TutorialController::class, 'create']);
+            Route::get('tutorial/show/{id}',[TutorialController::class, 'show']);
+            Route::get('tutorial/edit/{id}',[TutorialController::class, 'edit']);
+            Route::get('tutorial/destroy/{id}',[TutorialController::class, 'destroy']);
+            Route::post('tutorial/store',[TutorialController::class, 'store']);
+            Route::post('tutorial/update',[TutorialController::class, 'update']);
 
             Route::get('role',[RoleController::class, 'index'])->name('role');
             Route::get('role/create',[RoleController::class, 'create'])->name('role-create');

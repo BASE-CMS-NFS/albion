@@ -28,7 +28,7 @@ use Wa;
 use App\Models\Management\Ganking;
 use App\Models\Management\GankingDetail;
 use App\Models\Management\GankingPict;
-
+use App\Models\User;
 
 class GankingController extends Controller
 {
@@ -69,6 +69,40 @@ class GankingController extends Controller
         return view('admin.management.ganking.index',$data);
     }
 
+
+    public function analisis()
+    {
+        $data['title'] = 'analisis';
+        $data['link']  = 'analisis';
+        $data['tabel'] = FALSE;
+
+        return view('admin.management.ganking.analisis',$data);
+    }
+
+
+
+        public function analisisStore(Request $request)
+        {
+            $request->validate([
+                'start'            => 'required',
+                'end'              => 'required',
+            ]);
+
+            $data['title'] = 'analisis';
+            $data['link']  = 'analisis';
+            $data['tabel'] = TRUE;
+
+            $data['row'] = User::addSelect(['loot' => GankingDetail::selectRaw('sum(loot) as total')
+                ->whereBetween('created_at', [$request->start, $request->end])
+                ->whereColumn('users_id', 'users.id')
+                ->groupBy('users_id')
+            ])
+            ->where('cms_role_id',3)
+            ->orderBy('loot', 'DESC')
+            ->get();
+    
+            return view('admin.management.ganking.analisis',$data);
+        }
 
 
 

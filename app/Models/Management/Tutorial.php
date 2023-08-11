@@ -12,7 +12,7 @@ class Tutorial extends Model
 {
     use HasFactory;
 
-    protected $table = 'ganking';
+    protected $table = 'tutorial';
 
     protected $fillable = [
         'id',
@@ -37,6 +37,12 @@ class Tutorial extends Model
     }
 
     public static function listData(){
+        $data = Tutorial::orderBy('created_at','desc')->get();
+
+        return $data;
+    }
+
+    public static function listDataPemula(){
         $data = Tutorial::orderBy('created_at','desc')->paginate(10);
 
         return $data;

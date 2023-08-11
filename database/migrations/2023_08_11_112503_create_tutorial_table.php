@@ -15,7 +15,7 @@ class CreateTutorialTable extends Migration
     {
         Schema::create('tutorial', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('url');
+            $table->text('url');
             $table->string('judul');
             $table->text('description')->nullable();
             $table->timestamps();

@@ -41,34 +41,28 @@ class TutorialController extends Controller
      */
     public static function init(){
 
-        $data['title'] = 'ganking';
-        $data['link']  = 'ganking';
+        $data['title'] = 'tutorial';
+        $data['link']  = 'tutorial';
 
         return $data;
     }
 
-    public static function init_me(){
-
-        $data['title'] = 'ganking';
-        $data['link']  = 'me';
-
-        return $data;
-    }
-
-    public function ganking()
+    public function pemula()
     {
-        $data        = Self::init_me();
-        $data['row'] = Ganking::listDataByMe();
+        $data        = Self::init();
+        $data['row'] = Tutorial::listDataPemula();
 
-        return view('admin.management.ganking.ganking',$data);
+        return view('admin.management.tutorial.pemula',$data);
     }
+
+
 
     public function index()
     {
         $data        = Self::init();
-        $data['row'] = Ganking::listData();
+        $data['row'] = Tutorial::listData();
 
-        return view('admin.management.ganking.index',$data);
+        return view('admin.management.tutorial.index',$data);
     }
 
 
@@ -82,7 +76,7 @@ class TutorialController extends Controller
     public function create()
     {
         $data               = Self::init();
-        return view('admin.management.ganking.create',$data);
+        return view('admin.management.tutorial.create',$data);
     }
 
     /**
@@ -94,13 +88,12 @@ class TutorialController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'              => 'required|string',
-            'date'              => 'required',
-            'status'            => 'required',
+            'url'               => 'required|string',
+            'judul'             => 'required',
             'description'       => 'required',
         ]);
 
-        $save = Ganking::insertData($request);
+        $save = Tutorial::insertData($request);
 
         if($save){
             return redirect()->back()->with('message','success save data')->with('message_type','primary');
@@ -118,9 +111,8 @@ class TutorialController extends Controller
     public function show($id)
     {
         $data        = Self::init();
-        $data['row'] = Ganking::detailData($id);
-        $data['gank']= GankingDetail::listData($id);
-        return view('admin.management.ganking.show',$data);
+        $data['row'] = Tutorial::detailData($id);
+        return view('admin.management.tutorial.show',$data);
     }
 
     /**
@@ -132,8 +124,8 @@ class TutorialController extends Controller
     public function edit($id)
     {
         $data        = Self::init();
-        $data['row'] = Ganking::detailData($id);
-        return view('admin.management.ganking.edit',$data);
+        $data['row'] = Tutorial::detailData($id);
+        return view('admin.management.tutorial.edit',$data);
     }
 
     /**
@@ -146,14 +138,13 @@ class TutorialController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name'              => 'required|string',
-            'date'              => 'required',
-            'status'            => 'required',
+            'url'               => 'required|string',
+            'judul'             => 'required',
             'description'       => 'required',
             'id'                => 'required',
         ]);
 
-        $save = Ganking::updateData($request);
+        $save = Tutorial::updateData($request);
 
         if($save){
             return redirect()->back()->with('message','success save data')->with('message_type','primary');
@@ -162,25 +153,6 @@ class TutorialController extends Controller
         }
     }
 
-    public function qty(Request $request)
-    {
-        $request->validate([
-            'loot'             => 'required',
-            'status'           => 'required',
-            'id'               => 'required',
-        ]);
-
-        $save = Ganking::where('id',$request->id)->update([
-            "loot"   => $request->loot,
-            "status"=> $request->status
-        ]);
-
-        if($save){
-            return redirect()->back()->with('message','success save data')->with('message_type','primary');
-        }else{
-            return redirect()->back()->with('message','failed save data')->with('message_type','warning');
-        }
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -191,7 +163,7 @@ class TutorialController extends Controller
     public function destroy($id)
     {
         
-        $delete = Ganking::deleteData($id);
+        $delete = Tutorial::deleteData($id);
 
         if($delete){
             return redirect()->back()->with('message','success delete data')->with('message_type','primary');
