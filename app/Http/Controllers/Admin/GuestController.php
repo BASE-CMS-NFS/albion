@@ -30,6 +30,7 @@ use App\Models\Management\Ganking;
 use App\Models\Management\GankingDetail;
 use App\Models\Management\GankingPict;
 use App\Models\User;
+use App\Models\Management\Tutorial;
 
 
 class GuestController extends Controller
@@ -70,6 +71,8 @@ class GuestController extends Controller
         ->orderBy('loot', 'DESC')
         ->limit(4)->get();
 
+        
+        $data['tutorial'] = Tutorial::limit(2)->get();
         return view('welcome',$data);
     }
 

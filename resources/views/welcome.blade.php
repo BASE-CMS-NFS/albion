@@ -174,6 +174,43 @@
       </section>
       <!-- <section> close ============================-->
 
+
+        <section class="pt-4 pt-md-6">
+
+          <div class="container">
+            <div class="row align-items-center">
+
+              <div class="text-center">
+                <h2>Money Making</h2>
+                <p>tutorial money making albion online</p>
+              </div>
+      
+                  @foreach($tutorial as $key)
+                  <div class="col-sm-12 col-md-3 mb-3">
+                          <div class="card-deck">
+                              <div class="card">
+                                  @php
+                                      echo $key->url;
+                                  @endphp
+                                  <div class="card-body">
+                                      <h5 class="card-title">{{$key->judul}}</h5>
+                                      <p>@php echo $key->description; @endphp</p>
+                                  </div>
+                              </div>
+                          </div>
+                  </div>
+                  @endforeach
+
+                  <div class="text-center">
+                    <a class="btn btn-lg btn-danger hover-top btn-glow" href="{{url('/pemula')}}">Show All Tutorial</a>
+                  </div>
+      
+            </div>
+          </div>
+      
+      </section>
+
+
         <section class="pt-4 pt-md-6">
 
           <div class="container">
