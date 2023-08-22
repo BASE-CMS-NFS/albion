@@ -186,7 +186,7 @@
               </div>
       
                   @foreach($tutorial as $key)
-                  <div class="col-sm-12 col-md-3 mb-3">
+                  <div class="col-sm-12 col-md-6 mb-3">
                           <div class="card-deck">
                               <div class="card">
                                   @php
@@ -194,7 +194,6 @@
                                   @endphp
                                   <div class="card-body">
                                       <h5 class="card-title">{{$key->judul}}</h5>
-                                      <p>@php echo $key->description; @endphp</p>
                                   </div>
                               </div>
                           </div>
