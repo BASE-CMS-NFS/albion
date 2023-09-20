@@ -18,6 +18,7 @@ class CreateGankingDetailTable extends Migration
             $table->string('ganking_id');
             $table->string('users_id');
             $table->string('loot')->nullable();
+            $table->string('chest_loot')->nullable();
             $table->double('presentase')->nullable();
             $table->double('regear')->nullable();
             $table->datetime('time_start', $precision = 0)->nullable();

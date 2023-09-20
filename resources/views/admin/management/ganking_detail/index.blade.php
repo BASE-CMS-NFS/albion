@@ -75,7 +75,7 @@
                     <td>{{$key->time_start}}</td>
                     <td>{{$key->time_end}}</td>
                     <td>{{Date::diff($key->time_start,$key->time_end, $key->id)}}</td>
-                    <td>{{$key->loot}}</td>
+                    <td>{{$key->chest_loot}}</td>
                     <td>{{Date::presentase($key->play_time,$key->ganking_id, $key->id)}} %</td>
                     <td><b>{{Date::split_loot($key->id, $key->ganking_id)}}</b> Silver</td>
                     <td><b>{{Date::split_item($key->id, $key->ganking_id)}}</b> Item</td>
@@ -127,7 +127,7 @@
               
                               <div class="mb-3">
                                 <label for="loot" class="form-label">loot claim location</label>
-                                <input type="text" class="form-control" id="loot" name="loot" value="{{$key->loot}}" placeholder="loot">
+                                <input type="text" class="form-control" id="chest_loot" name="chest_loot" value="{{$key->chest_loot}}" placeholder="chest_loot">
                               </div>
               
                               <div class="mb-3">
@@ -195,7 +195,7 @@
 
                 <div class="mb-3">
                   <label for="loot" class="form-label">loot claim location</label>
-                  <input type="text" class="form-control" id="loot" name="loot" placeholder="loot">
+                  <input type="text" class="form-control" id="chest_loot" name="chest_loot" placeholder="chest_loot">
                 </div>
 
                 <div class="mb-3">
