@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{url('assets/vendors/typicons/typicons.css')}}">
 <link rel="stylesheet" href="{{url('assets/vendors/simple-line-icons/css/simple-line-icons.css')}}">
 <link rel="stylesheet" href="{{url('assets/vendors/css/vendor.bundle.base.css')}}">
+<link rel="stylesheet" href="{{url('assets//new/dist/css/select2.min.css')}}">
 <!-- endinject -->
 <!-- End plugin css for this page -->
 <!-- inject:css -->

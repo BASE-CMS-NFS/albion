@@ -70,6 +70,8 @@
             <tbody>
 
               @foreach ($row as $key)
+
+     
                   <tr>
                     <td>{{$key->users}}</td>
                     <td>{{$key->time_start}}</td>
@@ -84,10 +86,68 @@
                       <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#edit{{$key->id}}"
                          class="btn btn-sm btn-primary">edit</a>
 
+                         <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#copy{{$key->id}}"
+                          class="btn btn-sm btn-success">copy</a>
+
                       <a href="javascript:void(0)" onclick="hapus('{{url('ganking_detail/destroy/'.$key->id)}}')" 
                         class="btn btn-sm btn-danger">delete</a>
                     </td>
                   </tr>
+
+                  <div class="modal fade" id="copy{{$key->id}}" tabindex="-1" aria-labelledby="edit" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">duplicate</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                
+                        <form action="{{url('ganking_detail/store')}}" method="POST">
+                            @csrf
+                            <div class="modal-body">
+                               
+                              <input type="hidden" name="ganking_id" value="{{$ganking_id}}">
+
+                              <div class="form-group">
+                                <label for="member">member</label>
+                                <select id="userCOPY{{$key->id}}"   class="form-control" name="users_id" aria-label="Default select example">
+                                    <option selected value="{{$key->users_id}}">{{$key->users}}</option>
+                                    @foreach($users as $user)
+                                      <option value="{{$user->id}}">{{$user->name}}</option>
+                                    @endforeach
+                                </select>
+                              </div>
+              
+                              <div class="mb-3">
+                                <label for="time_start" class="form-label">time start</label>
+                                <input type="datetime-local" class="form-control" id="time_start" name="time_start" value="{{$key->time_start}}" placeholder="time_start">
+                              </div>
+              
+                              <div class="mb-3">
+                                <label for="time_end" class="form-label">time end</label>
+                                <input type="datetime-local" class="form-control" id="time_end" name="time_end" value="{{$key->time_end}}" placeholder="time_end">
+                              </div>
+              
+                              <div class="mb-3">
+                                <label for="loot" class="form-label">loot claim location</label>
+                                <input type="text" class="form-control" id="chest_loot" name="chest_loot" value="{{$key->chest_loot}}" placeholder="chest_loot">
+                              </div>
+              
+                              <div class="mb-3">
+                                <label for="regear" class="form-label">regear</label>
+                                <input type="number" class="form-control" id="regear" name="regear" value="{{$key->regear}}" placeholder="regear">
+                              </div>
+    
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                
+                      </div>
+                    </div>
+                  </div>
 
 
                   <div class="modal fade" id="edit{{$key->id}}" tabindex="-1" aria-labelledby="edit" aria-hidden="true">
@@ -107,7 +167,7 @@
 
                               <div class="form-group">
                                 <label for="member">member</label>
-                                <select id="user{{$key->id}}" class="form-control"  style="width: 100%" name="users_id" aria-label="Default select example">
+                                <select id="user{{$key->id}}"  class="form-control" name="users_id" aria-label="Default select example">
                                     <option selected value="{{$key->users_id}}">{{$key->users}}</option>
                                     @foreach($users as $user)
                                       <option value="{{$user->id}}">{{$user->name}}</option>
@@ -281,6 +341,8 @@
       });
   });
 </script>
+
+
 
 @endpush
 

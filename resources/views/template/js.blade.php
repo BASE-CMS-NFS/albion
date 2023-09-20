@@ -20,6 +20,8 @@
     <script src="{{url('assets/js/Chart.roundedBarCharts.js')}}"></script>
     <!-- End custom js for this page-->
 
+    <script src="{{url('assets//new/dist/js/select2.min.js')}}"></script>
+
     
     <script src="{{url('assets/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
