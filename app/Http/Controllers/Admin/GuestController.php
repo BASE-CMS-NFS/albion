@@ -72,7 +72,7 @@ class GuestController extends Controller
         ->limit(4)->get();
 
         
-        $data['tutorial'] = Tutorial::limit(2)->get();
+        $data['tutorial'] = Tutorial::limit(10)->orderBy('created_at','desc')->get();
         return view('welcome',$data);
     }
 
@@ -89,6 +89,15 @@ class GuestController extends Controller
         $data['link'] = 'member';
 
         return view('member',$data);
+    }
+
+    public function video(){
+
+        $data['tutorial'] = Tutorial::orderBy('created_at','desc')->get();
+
+        $data['link'] = 'video';
+
+        return view('video',$data);
     }
 
     /**

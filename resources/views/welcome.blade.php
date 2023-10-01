@@ -95,7 +95,7 @@
               <div class="card-body">
                 <div class="row">
 
-                  <iframe width="100%" height="400" src="https://www.youtube.com/embed/SQoVHdDfE6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe width="100%" height="500" src="https://www.youtube.com/embed/kj_ZIbyCqx0?si=eO7Sc856fljgsPTW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                 </div>
               </div>
@@ -161,7 +161,7 @@
                 <svg class="bi bi-check-circle-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2FAB73" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
                 </svg>
-                <p class="ms-2"><a href="https://discord.gg/97FAb2FE">https://discord.gg/97FAb2FE 
+                <p class="ms-2"><a href="https://discord.gg/CyUWF3rk5c">https://discord.gg/CyUWF3rk5c 
 </a>
                 </p>
               </div>
@@ -201,7 +201,7 @@
                   @endforeach
 
                   <div class="text-center">
-                    <a class="btn btn-lg btn-danger hover-top btn-glow" href="{{url('/pemula')}}">Show All Tutorial</a>
+                    <a class="btn btn-lg btn-danger hover-top btn-glow" href="{{url('/video')}}">Show All Tutorial</a>
                   </div>
       
             </div>

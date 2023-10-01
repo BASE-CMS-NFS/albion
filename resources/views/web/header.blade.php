@@ -5,6 +5,7 @@
         <ul class="navbar-nav mx-auto border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
           <li class="nav-item"><a class="nav-link @if($link == 'home') active active @endif" aria-current="page" href="{{url('/')}}">Home</a></li>
           <li class="nav-item"><a class="nav-link @if($link == 'member') active active @endif" href="{{url('member')}}">Member</a></li>
+          <li class="nav-item"><a class="nav-link @if($link == 'video') active active @endif" href="{{url('video')}}">Content</a></li>
           <li class="nav-item"><a class="nav-link" href="https://gatcha.harakiri-albion.online/">Gatcha </a></li>
         </ul>
         <form class="d-flex py-3 py-lg-0">

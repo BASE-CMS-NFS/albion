@@ -71,7 +71,6 @@
 
               @foreach ($row as $key)
 
-     
                   <tr>
                     <td>{{$key->users}}</td>
                     <td>{{$key->time_start}}</td>
