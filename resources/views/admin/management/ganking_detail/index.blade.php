@@ -6,7 +6,7 @@
 @endpush
 
 
-<div class="mb-3">
+<div class="mb-1">
           <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#create">
               Tambah Data
           </button>
@@ -45,6 +45,25 @@
   </div>  
 
 
+  <div class="mb-1">
+    <div class="card-body">
+      <div class="row">
+        <!-- List group Numbered -->
+        <div class="col-sm-12">
+          <small class="text-light fw-semibold">CARA MENAMBAHKAN ANGGOTA GANKING</small>
+          <div class="demo-inline-spacing mt-3">
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item">JIKA MERMBER BELUM TERDAFTAR , MAKA PILIH NICK ALBION , DAN KASIH INITIAL MEMBER DI CLAIM LOCATION</li>
+              <li class="list-group-item">DISRANKAN DI CATAT TERLEBIH DAHULU SEBELUM MEMBER BERANGKAT GANKING</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
 <div class="row" style="margin-bottom: 30px">
   <div class="col-sm-12">
     <div class="overflow-auto">
@@ -59,7 +78,7 @@
                 <th>time start</th>
                 <th>time end</th>
                 <th>play time</th>
-                <th>claim location</th>
+                <th>claim location / inisial member klo gak register</th>
                 <th>presen</th>
                 <th>split amount</th>
                 <th>item split</th>

@@ -82,7 +82,7 @@
                       <th>time start</th>
                       <th>time end</th>
                       <th>play time</th>
-                      <th>claim location</th>
+                      <th>claim location / inisial member klo gak register</th>
                       <th>presen</th>
                       <th>split amount</th>
                       <th>item split</th>
@@ -97,7 +97,7 @@
                           <td>{{$key->time_start}}</td>
                           <td>{{$key->time_end}}</td>
                           <td>{{Date::diff($key->time_start,$key->time_end, $key->id)}}</td>
-                          <td>{{$key->loot}}</td>
+                          <td>{{$key->chest_loot}}</td>
                           <td>{{Date::presentase($key->play_time,$key->ganking_id, $key->id)}} %</td>
                           <td><b>{{Date::split_loot($key->id, $key->ganking_id)}}</b> Silver</td>
                           <td><b>{{Date::split_item($key->id, $key->ganking_id)}}</b> Item</td>
